@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+/**
+ * config.xml
+ * Main config file listing:
+ *
+ * @category    Sitewards
+ * @package     Sitewards_SolrCore
+ * @copyright   Copyright (c) Sitewards GmbH (http://www.sitewards.com)
+ * @contact     magento@sitewards.com
+ */
+-->
+<config>
+	<modules>
+		<Sitewards_SolrCore>
+			<version>1.0.1</version>
+		</Sitewards_SolrCore>
+	</modules>
+	<global>
+		<models>
+			<catalogsearch>
+				<rewrite>
+					<query>Sitewards_SolrCore_Model_Query</query>
+				</rewrite>
+			</catalogsearch>
+			<enterprise_search>
+				<rewrite>
+					<adapter_httpStream>Sitewards_SolrCore_Model_Adapter_HttpStream</adapter_httpStream>
+					<adapter_phpExtension>Sitewards_SolrCore_Model_Adapter_PhpExtension</adapter_phpExtension>
+				</rewrite>
+			</enterprise_search>
+			<catalogsearch_resource>
+				<rewrite>
+					<fulltext>Sitewards_SolrCore_Model_Resource_Fulltext</fulltext>
+				</rewrite>
+			</catalogsearch_resource>
+		</models>
+	</global>
+</config>

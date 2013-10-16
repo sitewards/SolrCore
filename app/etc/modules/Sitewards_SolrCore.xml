@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+/**
+ * Sitewards_SolrCore.xml
+ * Main module config listing:
+ * 	If module is active
+ *	Which code pool module is in
+ *	All the module dependencies
+ *
+ * @category    Sitewards
+ * @package     Sitewards_SolrCore
+ * @copyright   Copyright (c) Sitewards GmbH (http://www.sitewards.com)
+ * @contact     magento@sitewards.com
+ */
+-->
+<config>
+	<modules>
+		<Sitewards_SolrCore>
+			<active>true</active>
+			<codePool>community</codePool>
+			<depends>
+				<Mage_CatalogSearch />
+				<Enterprise_Search />
+			</depends>
+		</Sitewards_SolrCore>
+	</modules>
+</config>

@@ -40,13 +40,14 @@ class Sitewards_SolrCore_Model_Adapter_HttpStream extends Enterprise_Search_Mode
      * @return array
      */
     protected function _search ($sQuery, $aParams = array()) {
+        $this->setResults(parent::_search($sQuery, $aParams));
         Mage::dispatchEvent(
-            'sitewards_solr_search_interface', array(
-                                                    'search_context' => $this, 'query' => $sQuery,
-                                                    'params'         => $aParams));
-        if (is_null($this->_aResults)) {
-            $this->setResults(parent::_search($sQuery, $aParams));
-        }
+            'sitewards_solr_search_interface',
+            array(
+                'search_context' => $this,
+                'query'          => $sQuery,
+                'params'         => $aParams)
+        );
         return $this->_aResults;
     }
 
